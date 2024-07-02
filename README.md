@@ -77,26 +77,26 @@ We can observe poisonous mushrooms generally tend to be of smaller stem-width, c
 * Dropped columns with more than 30% missing data
 
 **Missing Percent:**
-cap-diameter             0.000000
-cap-shape                0.000000
-cap-surface             23.121387
-cap-color                0.000000
-does-bruise-or-bleed     0.000000
-gill-attachment         16.184971
-gill-spacing            41.040462
-gill-color               0.000000
-stem-height              0.000000
-stem-width               0.000000
-stem-root               84.393064
-stem-surface            62.427746
-stem-color               0.000000
-veil-color              87.861272
-has-ring                 0.000000
-ring-type                4.046243
-spore-print-color       89.595376
-habitat                  0.000000
-season                   0.000000
-class                    0.000000
+ cap-diameter             0.000000
+ cap-shape                0.000000
+ cap-surface             23.121387
+ cap-color                0.000000
+ does-bruise-or-bleed     0.000000
+ gill-attachment         16.184971
+ gill-spacing            41.040462
+ gill-color               0.000000
+ stem-height              0.000000
+ stem-width               0.000000
+ stem-root               84.393064
+ stem-surface            62.427746
+ stem-color               0.000000
+ veil-color              87.861272
+ has-ring                 0.000000
+ ring-type                4.046243
+ spore-print-color       89.595376
+ habitat                  0.000000
+ season                   0.000000
+ class                    0.000000
 
 * Remaining missing values were filled with the mode (most frequent value) for each column
 
@@ -183,5 +183,4 @@ To further improve the model:
 
 #### Contact and Further Information
 Original research paper associated with the data set can be found at https://www.nature.com/articles/s41598-021-87602-3.pdf.
-
 For questions and contributions please reach out using contact information from profile page.
