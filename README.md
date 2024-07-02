@@ -1,34 +1,78 @@
-# Capstone
+### Project Title: Classification of mushrooms using AI/ML
 
-## Problem Statement:
-Is the mushroom edible?
+**Author**
+Mani K
+
+#### Executive summary
+The mushroom dataset contains information about various attributes of mushrooms, such as cap-shape, cap-color, stem-width, stem-height, stem-color, cap-surface, gill-color and habitat. The research project aims to classify and identify features influencing classification of mushrooms as **poisonous** or **edible**.
+
+#### Rationale
+
+*Classification of mushrooms as poisonous or edible is essential for multiple reasons :*
+
+   - Crucial for preventing potentially fatal food poisoning incidents
+
+   - Can aid in environmental conservation efforts and biodiversity studies
+
+   - Automate the sorting of mushrooms, ensuring that only edible varieties reach the market
+
+ *Without effective classification*
+    - The process of identifying edible mushrooms remains manual, time-consuming, and prone to errors
+
+Thorough data analysis can improve the accuracy of classification models, providing substantial benefits such as increased efficiency, risk 
+mitigation and better decision-making support.
+
+#### Research Question
+**Is the mushroom edible?**
 
 The goal of this research project is to build and evaluate predictive models to classify mushroom as edible or not. 
 
-## Solution submission:
-Capstone.ipynb - Contains the solution sumbission
-
-## Outcomes/Prediction
-We are trying to predict if mushroom is edible or not and important factors influencing the decision.
-
-Features used for prediciton in this dataset:
-
-* **Categorical Features:** cap-shape, cap-surface, cap-color, does-bruise-or-bleed, gill-attachment, gill-spacing, gill-color, stem-root, stem-surface, stem-color, veil-type, veil-color, has-ring, ring-type, spore-print-color, habitat, season
-
-* **Numerical Features:** cap-diameter, stem-height, stem-width
-
-* **Target:** class
-
-### Data Acquisition
-
+#### Data Sources
 Secondary mushroom dataset from UCI machine learning repository https://archive.ics.uci.edu/dataset/848/secondary+mushroom+dataset
 
 * **Number of Samples:** 61069
 * **Number of Features:** 21
 
-## Data Preparation:
+#### Methodology
+CRISP-DM framework is used as process guidance to achieve the goal of classifying mushrooms and identifying contributing features -
 
-### Missing Data
+##### [Data understanding]
+
+###### Features used for prediciton
+
+ * **Categorical Features:** cap-shape, cap-surface, cap-color, does-bruise-or-bleed, gill-attachment, gill-spacing, gill-color, stem-root, stem-surface, stem-color, veil-type, veil-color, has-ring, ring-type, spore-print-color, habitat, season
+
+* **Numerical Features:** cap-diameter, stem-height, stem-width
+
+* **Target:** class
+
+###### Data Visualization:
+
+####### Distribution of target variable
+
+![alt text](images/target.jpg)
+
+Target class is slightly imbalanced with more poisonous types compared to edible types
+
+
+####### Pair plot for numerical features
+
+![alt text](images/pair.jpg)
+
+We can observe poisonous mushrooms generally tend to be of smaller stem-width, cap-diameter and stem-height.
+
+
+####### Correlation matrix
+
+![alt text](images/corr.jpg)
+
+- Target 'class' shows higher correlation to features like cap-diameter, stem-color, stem-height and cap-color  
+- Target 'class' is negatively correlated to features like season and gill-attachment
+
+
+##### [Data Preparaion]
+
+###### Missing Data
 * Dropped columns with more than 30% missing data
 
 **Missing Percent:**
@@ -55,39 +99,21 @@ class                    0.000000
 
 * Remaining missing values were filled with the mode (most frequent value) for each column
 
-### Encoding
+###### Drop columns with just one type
+Veil column was dropped as there is just one type.
+
+###### Encoding
 * Categorical features were identified and encoded 
    - Binary features were factorized (0 and 1) 
    - Features with more than two unique values were frequency encoded
 
-### Scaling
-* Numerical features were standardized using StandardScaler
-
-## Data Visualization:
-
-#### Distribution of target variable
-target class is slightly imbalanced with more poisonous types compared to edible types
-
-![alt text](images/target.jpg)
-
-#### Pair plot for numerical features
-
-![alt text](images/pair.jpg)
-
-#### Correlation matrix
-- Target 'class' shows higher correlation to features like cap-diameter, stem-color, stem-height and cap-color  
-- Target 'class' is negatively correlated to features like season and gill-attachment
-
-![alt text](images/corr.jpg)
+###### Scaling
+* Scale all features to ensure they are on a similar scale using MinMax scaler
 
 
-## Analysis and Modeling
+##### [Modeling] 
 
-- Exploratory Data Analysis (EDA): Analyzed the dataset to understand data distributions, correlations, and relationships between features.
-
-- Machine Learning Models: 
-
-   - Following machine learning models were trained and evaluated:
+- Following machine learning models were trained and evaluated:
      - **Baseline Model**: A dummy classifier was used to establish a baseline performance.
      - **Logistic Regression**
      - **K-Nearest Neighbors (KNN)**
@@ -96,11 +122,11 @@ target class is slightly imbalanced with more poisonous types compared to edible
      - **Custom Logistic Regression using Gradient Decent**
 
 
+##### [Evaluation/Results]
 
-## Model Evaluation: 
 Evaluated model performance using training time, accuracy, recall and precision of training and test data.
 
-We will use recall score for reccomedation as high recall ensures that most of the poisonous mushrooms are correctly identified as poisonous.
+We will use **recall score** for reccomedation as high recall ensures that most of the poisonous mushrooms are correctly identified as poisonous.
 
 **Default Model:**
 
@@ -127,7 +153,8 @@ Dummy Classifier (Most Frequent) Accuracy: 0.5549369575896512
 Custom Logistic Regression Train Accuracy: 63.34%
 Custom Logistic Regression Test Accuracy: 63.06%
 
-## Findings
+##### [Deployment]
+
 The data is not well suited for linear separation as observed from different modeling results of logistic regression and PCA visualization after reducing to two dimensions.
 
 ![alt text](images/pca.jpg)
@@ -139,10 +166,20 @@ We can observe **stem-width, stem-color, cap-surface, gill-color and stem-height
 
 ![alt text](images/dt-features.jpg)
 
+* Once deployment the system can be monitored for performance and make necessary adjustments as needed.
 
-## Next Steps:
 
+#### Next steps
 To further improve the model:
 - Explore more advanced feature engineering techniques.
 - Utilize ensemble methods like Random Forest or Gradient Boosting.
 - Regularly update the model with new data to maintain its accuracy.
+
+#### Outline of project
+
+- ![alt text](Capstone.ipynb)(Capstone.ipynb - Contains the solution sumbission) 
+
+
+##### Contact and Further Information
+Original research paper associated with the data set can be found at https://www.nature.com/articles/s41598-021-87602-3.pdf.
+For questions and contributions please reach out using contact information from profile page.
