@@ -56,14 +56,14 @@ CRISP-DM framework is used as process guidance to achieve the goal of classifyin
 Target class is slightly imbalanced with more poisonous types compared to edible types
 
 
-##### Pair plot for numerical features
+#### Pair plot for numerical features
 
 ![alt text](images/pair.jpg)
 
 We can observe poisonous mushrooms generally tend to be of smaller stem-width, cap-diameter and stem-height.
 
 
-##### Correlation matrix
+#### Correlation matrix
 
 ![alt text](images/corr.jpg)
 
