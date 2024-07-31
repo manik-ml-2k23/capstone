@@ -134,19 +134,19 @@ Dummy Classifier (Most Frequent) Accuracy: 0.5549369575896512
 
 **b) Basic Models:**
 
-                               Train Time  Train Accuracy  Test Accuracy  Train Recall  Test Recall  Train Precision  Test Precision
-       K-Nearest Neighbors       0.099588        0.998403       0.995988      0.997379     0.993194         0.999033        0.997782
-       Decision Tree             0.225074        1.000000       0.994187      1.000000     0.992642         1.000000        0.994288
-       Logistic Regression       0.090166        0.642391       0.639921      0.505036     0.505151         0.620803        0.616524
-       Support Vector Machine   83.843968        0.918903       0.915916      0.880708     0.880795         0.933330        0.926650
+                              Train Time   Test Time Train Accuracy Test Accuracy Train Recall Test Recall Train Precision Test Precision              Confusion Matrix   ROC AUC
+       K-Nearest Neighbors      0.100245    9.722334       0.998403      0.995988     0.997379    0.993194        0.999033       0.997782      [[6766, 12], [37, 5399]]  0.999254
+       Decision Tree            0.239937    0.012166            1.0      0.994187          1.0    0.992642             1.0       0.994288      [[6747, 31], [40, 5396]]  0.994034
+       Logistic Regression      0.103065    0.004273       0.642391      0.639921     0.505036    0.505151        0.620803       0.616524  [[5070, 1708], [2690, 2746]]   0.69087
+       Support Vector Machine  76.806297  169.794465       0.918903      0.915916     0.880708    0.880795         0.93333        0.92665    [[6399, 379], [648, 4788]]  0.971634
 
 **c) Optimized Models:**
 
-                              Train Time  Train Accuracy  Test Accuracy  Train Recall  Test Recall  Train Precision  Test Precision
-       K-Nearest Neighbors       0.097432        1.000000       0.998117      1.000000     0.996873         1.000000        0.998894
-       Decision Tree             0.267062        0.999959       0.994105      0.999908     0.993010         1.000000        0.993741
-       Logistic Regression       0.217406        0.642166       0.639348      0.505082     0.504783         0.620403        0.615661
-       Support Vector Machine  273.494926        0.982929       0.978385      0.974799     0.969095         0.986687        0.982103
+                               Train Time  Test Time Train Accuracy Test Accuracy Train Recall Test Recall Train Precision Test Precision              Confusion Matrix   ROC AUC
+       K-Nearest Neighbors       0.073469   4.782664            1.0      0.998117          1.0    0.996873             1.0       0.998894       [[6772, 6], [17, 5419]]  0.998852
+       Decision Tree             0.217084   0.010864       0.999959      0.994105     0.999908     0.99301             1.0       0.993741      [[6744, 34], [38, 5398]]  0.994088
+       Logistic Regression       0.173497   0.003833       0.642166      0.639348     0.505082    0.504783        0.620403       0.615661  [[5065, 1713], [2692, 2744]]  0.691001
+       Support Vector Machine  232.484208  38.761807       0.982929      0.978385     0.974799    0.969095        0.986687       0.982103     [[6682, 96], [168, 5268]]  0.997253
 
 **d) Custom Model (logistic regression using gradient decent):**
 
